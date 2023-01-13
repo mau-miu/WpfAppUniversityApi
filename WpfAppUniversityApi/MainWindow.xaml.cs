@@ -44,17 +44,17 @@ namespace WpfAppUniversityApi
 
         private async void SaveStudent(Student student)
         {
-            await client.PostAsJsonAsync("student", student);
+            await client.PostAsJsonAsync("students", student);
         }
 
         private async void UpdateStudent(Student student)
         {
-            await client.PutAsJsonAsync("student"+ student.StudentId, student);
+            await client.PutAsJsonAsync("students/"+ student.StudentId, student);
         }
 
         private async void DeleteStudent(int studentId)
         {
-            await client.DeleteAsync("student/" + studentId);
+            await client.DeleteAsync("students/" + studentId);
         }
 
         private void btnSaveStudent_Click(object sender, RoutedEventArgs e)
